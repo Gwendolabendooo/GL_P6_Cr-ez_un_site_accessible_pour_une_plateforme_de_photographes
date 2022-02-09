@@ -5,7 +5,20 @@
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.main-photograph{
     margin: 0 100px;
+}
+
+.picture{
+    width: 350px;
+    height: 350px;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 .contact_button {
@@ -68,9 +81,126 @@ form div {
     margin-bottom: 26px;
 }
 
+.ctn-like{
+    display: flex;
+    margin-right: 20px;
+    flex-direction: row;
+}
+
+.ml-2{
+    margin-left: 10px;
+}
+
+.mt-2{
+    margin-top: 40px;
+}
+
+#contact_modal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #312e2e3f;
+}
+
+#ctn-diapo{
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+}
+
+#ctn-diapo > img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+.imgDiapo{
+    transition: all .7s;
+    -webkit-transition: all .7s;
+    -moz-transition: all .7s;
+    -ms-transition: all .7s;
+    -o-transition: all .7s;
+}
+
+.crossLightbox{
+    position: absolute;
+    color: black;
+    right: 20px;
+    top: 20px;
+}
+
+.lightbox{
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: white;
+}
+
+.lightbox > div{
+    width: 80%;
+    height: 80%;
+    position: relative;
+    border: solid 2px black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.price{
+    position: fixed;
+    right: 40px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    bottom: 0;
+    display: flex;
+    background-color: #D3573C;
+    display: flex;
+    width: 270px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price > div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon-heart{
+    width: 16px;
+}
+
+.photograph-pictures{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.ctn-summary{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 form input {
     width: 100%;
-    height: 68px;
+    height: 50px;
     border: none;
     border-radius: 5px;
+}
+
+#contact-name{
+    width: 100%;
+}
+
+.message{
+    height: 150px;
 }
