@@ -15,18 +15,20 @@
       <div class="photograph-header">
         <!-- <button class="contact_button" onclick="displayModal()">Contactez-moi</button> -->
       </div>
-      Trier par
-      <select name="pets" id="pet-select" onchange="filterPictures(event)">
-        <option value="popularity">Popularité</option>
-        <option value="date">Date</option>
-        <option value="titre">Titre</option>
-    </select>
+      <div>
+        Trier par
+        <select name="pets" id="pet-select" class="custom-select" onchange="filterPictures(event)">
+          <option value="popularity">Popularité</option>
+          <option value="date">Date</option>
+          <option value="titre">Titre</option>
+        </select>
+      </div>
       <div class="photograph-pictures">
       </div>
     </main>
     <div class="price p-2">
       <div>
-        <span>
+        <span id="nbTotLike">
           0
         </span>
         <img src="assets/icons/heart-solid.svg" class="icon-heart ml-2" alt="">
@@ -46,7 +48,9 @@
           <path d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill="#901C1C"/>
         </svg>   
         <img src="assets/icons/angle-left-solid.svg" class="arrow-left" onclick="prevImg()" />
-        <div id="ctn-diapo">
+        <div class="ctn-ctn-diapo">
+          <div id="ctn-diapo">
+          </div>
         </div>
         <img src="assets/icons/angle-left-solid.svg" class="arrow-right" onclick="nextImg()"/>
       </div>

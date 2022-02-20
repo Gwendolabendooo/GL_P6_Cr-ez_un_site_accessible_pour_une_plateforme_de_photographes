@@ -30,23 +30,30 @@ function PhotographerPictures(data, photograph) {
         document.getElementById("ctn-diapo").innerHTML = ""
         data.forEach(element => {
             const img =  document.createElement( 'img' );
-            img.classList.add("imgDiapo")
+            const title =  document.createElement( 'h3' );
+            const ctnDiap = document.createElement( 'div' );
+            title.classList.add("titleDiapo");
+            title.innerHTML = element.title;
+            img.classList.add("imgDiapo");
             img.setAttribute("src", dir+element.image);
             img.setAttribute("data-img", element.image);
-            document.getElementById("ctn-diapo").appendChild(img)
+            ctnDiap.appendChild(img)
+            ctnDiap.appendChild(title)
+            document.getElementById("ctn-diapo").appendChild(ctnDiap)
         })
     }
     diapo()
     
 
     function photographerPictures() {
-        data.forEach(element => {
+        data.forEach((element, i) => {
             if(element.image != undefined){
                 const ctnDetail = document.createElement( 'div' );
                 const img = document.createElement( 'img' );
                 const likes = document.createElement( 'div' );
                 const title = document.createElement( 'h3' );
                 const date = document.createElement( 'div' );
+                const nbLike = document.createElement( 'div' );
                 const heart = document.createElement( 'img' );
                 const ctnSummary = document.createElement( 'div' );
 
@@ -54,7 +61,7 @@ function PhotographerPictures(data, photograph) {
                 totalLike = totalLike + element.likes
 
                 date.innerHTML = element.date
-                likes.innerHTML = element.likes
+                nbLike.innerHTML = element.likes
                 title.innerHTML = element.title
 
                 likes.classList.add("ctn-like")
@@ -68,12 +75,15 @@ function PhotographerPictures(data, photograph) {
                 img.setAttribute("data-img", element.image);
                 heart.setAttribute("src", "assets/icons/heart-solid.svg");
 
+                likes.appendChild(nbLike)
                 likes.appendChild(heart)
+                likes.id = i;
                 ctnSummary.appendChild(title);
                 ctnSummary.appendChild(likes);
                 ctnDetail.appendChild(img);
                 ctnDetail.appendChild(ctnSummary)
                 // ctnDetail.appendChild(date)
+                likes.setAttribute("onclick","toggleLike(" + "'" + i + "'" + ")");
 
                 ctn_pictures.appendChild(ctnDetail); 
             }
