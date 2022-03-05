@@ -1,4 +1,3 @@
-let photographers = []
 let media = []
 
 const queryString = window.location.search;
@@ -46,13 +45,13 @@ function getPhotographers() {
         var data = JSON.parse(text);
         photographers = data.photographers
         media = data.media
-        getPhotograph = getPhotographer()
-        const detail = DetailPhotographer(getPhotograph)
-        //Picture liste
-        const posts = PhotographerPictures(getRealisation(), getPhotograph)
 
-        document.querySelector(".photograph-header").appendChild(detail.detailPhotographer());
-        posts.photographerPictures();
+        let searchParams = new URLSearchParams(window.location.search);
+        if (searchParams.has('id')) {
+            getPhotograph = getPhotographer()
+            document.querySelector(".photograph-header").appendChild(DetailPhotographer(getPhotograph).detailPhotographer());
+            PhotographerPictures(getRealisation(), getPhotograph).photographerPictures();   
+        }
     });
 
 }
