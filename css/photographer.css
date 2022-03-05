@@ -83,7 +83,6 @@ form div {
 
 .ctn-like{
     display: flex;
-    margin-right: 20px;
     flex-direction: row;
 }
 
@@ -120,6 +119,7 @@ form div {
     background-color: white;
     width: 100%;
     margin: 0;
+    z-index: 100;
 }
 
 #ctn-diapo > div > img{
@@ -128,9 +128,15 @@ form div {
     height: 800px;
 }
 
+.ctn-summary > h3{
+    width: 275px;
+    overflow: hidden;
+    height: 21px;
+}
+
 #ctn-diapo > div{
     width: 100%;
-    display: contents;
+    display: inline-table;
     height: 100%;
     position: relative;
 }

@@ -31,6 +31,7 @@ function DetailPhotographer(data) {
         position.appendChild(pos);
         position.appendChild(tagl);
         img.setAttribute("src", picture);
+        img.setAttribute("alt", name);
         ctnDetail.appendChild(position);
         ctnDetail.appendChild(button);
         ctnDetail.appendChild(img);

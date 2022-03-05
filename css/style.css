@@ -48,13 +48,6 @@ h1 {
     -o-transform: rotate(180deg);
 }
 
-.photographer_section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
-    margin-top: 70px;
-}
-
 .photographer_section a {
     justify-self: center;
     display: flex;
@@ -89,6 +82,11 @@ h3{
     color: #901C1C;
 }
 
+video{
+    width: 100%;
+    height: 800px;
+}
+
 .photographer_section article img {
     height: 200px;
     width: 200px;
@@ -118,3 +116,16 @@ h3{
 .p-2{
     padding: 10px;
 }
+
+.photographer_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 70px;
+    margin-top: 70px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .photographer_section {
+        grid-template-columns: 1fr 1fr;
+    }
+  }

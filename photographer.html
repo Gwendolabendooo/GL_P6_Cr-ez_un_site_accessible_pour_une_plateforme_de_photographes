@@ -9,7 +9,9 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="../">
+        <img src="assets/images/logo.png" class="logo" />
+      </a>
     </header>
     <main id="main" class="main-photograph">
       <div class="photograph-header">
@@ -17,10 +19,10 @@
       </div>
       <div>
         Trier par
-        <select name="pets" id="pet-select" class="custom-select" onchange="filterPictures(event)">
-          <option value="popularity">Popularité</option>
-          <option value="date">Date</option>
-          <option value="titre">Titre</option>
+        <select name="pets" id="pet-select" class="custom-select" aria-label="Bouton trie" onchange="filterPictures(event)">
+          <option value="popularity" role="option" key="Popularité">Popularité</option>
+          <option value="date" role="option" key="Date">Date</option>
+          <option value="titre" role="option" key="Titre">Titre</option>
         </select>
       </div>
       <div class="photograph-pictures">
@@ -44,15 +46,15 @@
     </div>
     <div class="lightbox">     
       <div>
-        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" class="crossLightbox" onclick="closeLightbox()">
+        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" alt="Bouton fermer la modale" class="crossLightbox" onclick="closeLightbox()">
           <path d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill="#901C1C"/>
         </svg>   
-        <img src="assets/icons/angle-left-solid.svg" class="arrow-left" onclick="prevImg()" />
+        <img src="assets/icons/angle-left-solid.svg" alt="Image précédente" tabindex="0" class="arrow-left" onclick="prevImg()" />
         <div class="ctn-ctn-diapo">
           <div id="ctn-diapo">
           </div>
         </div>
-        <img src="assets/icons/angle-left-solid.svg" class="arrow-right" onclick="nextImg()"/>
+        <img src="assets/icons/angle-left-solid.svg" alt="Image suivante" tabindex="0" class="arrow-right" onclick="nextImg()"/>
       </div>
     </div>
     <div id="contact_modal">
@@ -62,7 +64,7 @@
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
         <h3 id="contact-name"></h3>
-				<form>
+				<form onsubmit="return ContactRenseigne()">
 					<div>
 						<label>Prénom</label>
 						<input />
@@ -79,7 +81,7 @@
 						<label>Votre message</label>
 						<input class="message" />
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <input type="submit" value="Envoyer" class="contact_button"/>
 				</form>
 			</div>
 		</div>

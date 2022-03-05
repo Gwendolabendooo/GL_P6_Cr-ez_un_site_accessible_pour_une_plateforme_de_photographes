@@ -8,6 +8,13 @@ function closeModal() {
     modal.style.display = "none";
 }
 
+function ContactRenseigne(){
+    document.querySelectorAll('input').forEach(element => {
+        console.log(element.value)
+    });
+    return false;
+}
+
 //to deplace
 function toggleLike(index) {
     const nblike = document.getElementById(index).firstChild;
@@ -28,12 +35,12 @@ function toggleLike(index) {
 
 
 function displayLightbox(id) {
-    console.log("displayed", id)
     let index = 0
     document.querySelectorAll(".imgDiapo").forEach((element, i) => {
-        console.log(element)
-        if( element.getAttribute("data-img") == id){
+        console.log("ici",id, element.firstChild.getAttribute("data-img"))
+        if( element.firstChild.getAttribute("data-img") == id){
             index = i
+            console.log(i)
         }
     })
     console.log(index)
@@ -60,6 +67,16 @@ function nextImg() {
     }
 
 }
+
+//navigation gightbox clavier
+document.addEventListener('keyup', (e) => {
+    if (e.code === "ArrowLeft"){
+        prevImg()
+    }else if (e.code === "ArrowRight") {
+        nextImg()
+    }
+  
+});
 
 function prevImg() {
     let margin = document.querySelector(".imgDiapo").style.marginLeft = document.querySelector(".imgDiapo").style.marginLeft
