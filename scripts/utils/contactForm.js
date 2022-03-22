@@ -43,7 +43,6 @@ function displayLightbox(id) {
             console.log(i)
         }
     })
-    console.log(index)
     document.querySelector(".imgDiapo").style.marginLeft = '-' + index * 800 + "px"
     const modal = document.querySelector("body > div.lightbox");
     modal.style.display = "flex";
