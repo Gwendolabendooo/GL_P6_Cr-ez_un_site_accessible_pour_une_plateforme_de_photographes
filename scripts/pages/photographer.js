@@ -54,7 +54,7 @@ function getPhotographers() {
       getPhotograph = getPhotographer();
       document
         .querySelector(".photograph-header")
-        .appendChild(detailPhotographer(getPhotograph).detailPhotographer());
+        .appendChild(DetailPhotographer(getPhotograph).detailPhotographer());
       PhotographerPictures(
         getRealisation(),
         getPhotograph
