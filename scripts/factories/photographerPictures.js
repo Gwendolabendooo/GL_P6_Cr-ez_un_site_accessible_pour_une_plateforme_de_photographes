@@ -9,10 +9,11 @@ function PhotographerPictures(data, photograph) {
         return pictureB.likes - pictureA.likes
     })
 
+    //Filtre en fonction du paramètre fourni
     function filterPictures(param1){
         ctn_pictures.innerHTML = ""
         console.log(param1)
-        const trie = data.sort((pictureA, pictureB) => {
+        data.sort((pictureA, pictureB) => {
             if(param1 == "popularity"){
                 return pictureB.likes - pictureA.likes
             }else if(param1 == "titre"){
@@ -31,8 +32,11 @@ function PhotographerPictures(data, photograph) {
             diapoPictureOrVideo(element)
         })
     }
+
+    //Initialize le diapo
     diapo()
 
+    //Interface permettant de creer un image ou une video dans le carroussel
     function diapoPictureOrVideo(media) {
         if (media.image != undefined) {
             addImageDiapo(media)
@@ -41,6 +45,7 @@ function PhotographerPictures(data, photograph) {
         }
     }
 
+    //Interface permettant de creer un image ou une video
     function pictureOrVideo(media, i) {
         if (media.image != undefined) {
             addImage(media, i)
@@ -180,6 +185,7 @@ function PhotographerPictures(data, photograph) {
     }
 
 
+    //Crée la gallery d'un photographe
     function photographerPictures() {
         data.forEach((element, i) => {
             pictureOrVideo(element, i)
