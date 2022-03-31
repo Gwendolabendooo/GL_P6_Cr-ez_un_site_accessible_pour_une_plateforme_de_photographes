@@ -1,5 +1,6 @@
 let photographers = [];
 
+//Récupère les données correspondantes à tous les photographes
 function getPhotographers() {
   //Creation requete json
   function readTextFile(file, callback) {
@@ -23,6 +24,7 @@ function getPhotographers() {
   });
 }
 
+//Permet d'afficher la page principale 
 function displayData() {
   const photographersSection = document.querySelector(".photographer_section");
 

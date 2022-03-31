@@ -3,6 +3,7 @@ function DetailPhotographer(data) {
 
   const picture = `assets/SamplePhotos/Photographers/${portrait}`;
 
+  //Génère le détail d'un photographe
   function detailPhotographer() {
     const ctnDetail = document.createElement("div");
     const namePhotograph = document.createElement("h2");

@@ -3,6 +3,7 @@ function photographerFactory(data) {
 
   const picture = `assets/SamplePhotos/Photographers/${portrait}`;
 
+  //Génère la card d'overview d'un photographe
   function getUserCardDOM() {
     const article = document.createElement("article");
     const img = document.createElement("img");

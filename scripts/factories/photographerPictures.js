@@ -4,6 +4,7 @@ function PhotographerPictures(data, photograph) {
     const dir = `assets/SamplePhotos/${photograph.name}/`;
     const ctn_pictures = document.querySelector(".photograph-pictures");
   
+    //filtre à l'initialisation d'une page
     data.sort((pictureA, pictureB) => {
       return pictureB.likes - pictureA.likes;
     });
@@ -36,6 +37,18 @@ function PhotographerPictures(data, photograph) {
   
     //Initialize le diapo
     diapo();
+
+    //Crée la gallery d'un photographe
+    function photographerPictures() {
+      data.forEach((element, i) => {
+        pictureOrVideo(element, i);
+      });
+      document.querySelector(
+        "body > div.price.p-2 > div:nth-child(1) > span"
+      ).innerHTML = totalLike;
+  
+      return ctn_pictures;
+    }
   
     //Interface permettant de creer un image ou une video dans le carroussel
     function diapoPictureOrVideo(media) {
@@ -194,18 +207,6 @@ function PhotographerPictures(data, photograph) {
       likes.setAttribute("onclick", "toggleLike(" + "'" + i + "'" + ")");
   
       ctn_pictures.appendChild(ctnDetail);
-    }
-  
-    //Crée la gallery d'un photographe
-    function photographerPictures() {
-      data.forEach((element, i) => {
-        pictureOrVideo(element, i);
-      });
-      document.querySelector(
-        "body > div.price.p-2 > div:nth-child(1) > span"
-      ).innerHTML = totalLike;
-  
-      return ctn_pictures;
     }
     return { photographerPictures, filterPictures };
   }
