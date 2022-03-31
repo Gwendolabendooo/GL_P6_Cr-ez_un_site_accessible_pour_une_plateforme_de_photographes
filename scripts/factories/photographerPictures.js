@@ -28,6 +28,7 @@ function PhotographerPictures(data, photograph) {
       photographerPictures();
     }
   
+    //Génère les images et vidéos du diapo
     function diapo() {
       document.getElementById("ctn-diapo").innerHTML = "";
       data.forEach((element) => {
@@ -68,6 +69,7 @@ function PhotographerPictures(data, photograph) {
       }
     }
   
+    //Permet d'ajouter une vidéo dans la diapo
     function addVideoDiapo(element) {
       const video = document.createElement("video");
       const source = document.createElement("source");
@@ -86,6 +88,7 @@ function PhotographerPictures(data, photograph) {
       document.getElementById("ctn-diapo").appendChild(ctnDiap);
     }
   
+    //Permet d'ajouter une image dans la diapo
     function addImageDiapo(element) {
       const img = document.createElement("img");
       const title = document.createElement("h3");
@@ -101,6 +104,7 @@ function PhotographerPictures(data, photograph) {
       document.getElementById("ctn-diapo").appendChild(ctnDiap);
     }
   
+    //Permet d'ajouter une image dans la gallery
     function addImage(element, i) {
       const ctnDetail = document.createElement("article");
       const img = document.createElement("img");
@@ -154,6 +158,7 @@ function PhotographerPictures(data, photograph) {
       ctn_pictures.appendChild(ctnDetail);
     }
   
+    //Permet d'ajouter une vidéo dans la gallery
     function addVideo(element, i) {
       const ctnDetail = document.createElement("article");
       const video = document.createElement("video");
